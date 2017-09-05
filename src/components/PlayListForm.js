@@ -53,33 +53,33 @@ export default class PlayListForm extends Component {
     this.setState({userName: '', songNotes: '', songArtist: '', songTitle:''});
   }
 
-    render () {
-      return (
+  render () {
+    return (
+      <div>
+        <div className='playlist-form'>
+        <form onSubmit={this.addToList}>
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput">Username:</label>
+          <input value={this.state.userName} onChange={this.handleUsernameChange} type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter your username..." />
+        </div>
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput2">Artist/Band:</label>
+          <input value={this.state.songArtist} onChange={this.handleArtistChange} type="text" className="form-control" id="formGroupExampleInput2" placeholder="Enter the Band or Artist name..." />
+        </div>
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput">Song Title:</label>
+          <input value={this.state.songTitle} onChange={this.handleTitleChange} type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter the song title..." />
+        </div>
+        <div className="form-group">
+          <label htmlFor="formGroupExampleInput2">Song Notes:</label>
+          <textarea value={this.state.songNotes} onChange={this.handleNotesChange} className="form-control" id="formGroupExampleInput2" rows="4" placeholder="Enter some notes about the song..."/>
+        </div>
         <div>
-          <div className='playlist-form'>
-          <form>
-          <div className="from-group">
-            <label htmlFor="formGroupExampleInput">Username:</label>
-            <input value={this.state.value} onChange={this.handleUsernameChange} type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter your username..." />
-          </div>
-          <div className="form-group">
-            <label htmlFor="forGroupExampleInput2">Artist/Band</label>
-            <input value={this.state.value} onChange={this.handleArtistChange} type="text" className="form-control" id="formGroupExampleInput2" placeholder="Enter the Band or Artist name..." />
-          </div>
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Song Title:</label>
-            <input value={this.state.value} onChange={this.handleTitleChange} type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter the song title..." />
-          </div>
-          <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Song Notes:</label>
-            <input value={this.state.value} onChange={this.handleNotesChange} type="text" className="form-control" id="forGroupExampleInput2" placeholder="Enter some notes about the song..." />
-          </div>
-          <div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </div>
-          </form>
+          <button type="submit" className="btn btn-outline-warning">Submit</button>
         </div>
-        </div>
-      )
-    }
+        </form>
+      </div>
+      </div>
+    )
   }
+}
